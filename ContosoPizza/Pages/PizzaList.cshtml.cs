@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ContosoPizza.Pages
 {
-    [Authorize]
+    //[Authorize]
     public class PizzaListModel : PageModel
     {
         private readonly PizzaService _service;

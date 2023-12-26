@@ -29,7 +29,7 @@
     </div>
     <div class="form-group">
         <label asp-for="NewPizza.Price" class="control-label"></label>
-        <input asp-for="NewPizza.Price" class="form-control" />
+        <input asp-for="NewPizza.Price" class="form-control" type="number" step="0.01" pattern="\d+(\.\d{1,2})?" />
         <span asp-validation-for="NewPizza.Price" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -55,12 +55,13 @@
                 <td>@pizza.Size</td>
                 <td>@(pizza.IsGlutenFree ? "✔️" : string.Empty)</td>
                 <td>
+                    <div class="form-group">
+                        <a asp-page="./Edit" asp-route-id="@pizza.Id" class="btn btn-primary">Edit</a> -
 
-                    <button class="btn btn-danger" asp-page="./Edit" asp-route-id="@pizza.Id">Edit</button>
-                   
-                    <form method="post" asp-page-handler="Delete" asp-route-id="@pizza.Id">
-                        <button class="btn btn-danger">Delete</button>
-                    </form>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@pizza.Id" style="display: inline;">
+                            <button class="btn btn-danger" >Delete</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
         }
