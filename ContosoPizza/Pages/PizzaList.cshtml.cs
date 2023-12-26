@@ -36,6 +36,15 @@ namespace ContosoPizza.Pages
         }
         public IActionResult OnPostDelete(int id)
         {
+            if (!_service.PizzaExists(id))
+            {
+                // Mensaje de error
+                TempData["ErrorMessage"] = "Pizza doesn't exist"; // Puedes personalizar este mensaje según tus necesidades
+
+                // Redireccionar a la vista
+                return RedirectToAction("Get");
+            }
+
             _service.DeletePizza(id);
 
             return RedirectToAction("Get");

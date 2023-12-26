@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using ContosoPizza.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ContosoPizza.Pages
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly ContosoPizza.Data.PizzaContext _context;

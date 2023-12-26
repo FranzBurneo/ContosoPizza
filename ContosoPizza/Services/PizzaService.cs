@@ -46,7 +46,7 @@ namespace ContosoPizza.Services
                 }
             }            
         }
-        private bool PizzaExists(int id)
+        public bool PizzaExists(int id)
         {
             return _context.Pizzas.Any(e => e.Id == id);
         }
