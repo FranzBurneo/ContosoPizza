@@ -8,7 +8,7 @@ public class Pizza
 
     [Required]
     [StringLength(20, ErrorMessage = "Name is too long.")]
-    [RegularExpression("^[a-zA-Z0-9]*$", ErrorMessage = "Invalid characters in the name.")]
+    [RegularExpression("^[a-zA-Z 0-9]*$", ErrorMessage = "Invalid characters in the name.")]
     public string? Name { get; set; }
     [Required]
     [EnumDataType(typeof(PizzaSize), ErrorMessage = "Invalid pizza size.")]
